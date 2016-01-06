@@ -16,5 +16,5 @@ mersennePrimes = do
 
 main :: IO ()
 main = do
-    putStrLn "Printing Mersenne primes numbers!"
+    putStrLn "Printing Mersenne primes!"
     mapM_ print mersennePrimes
