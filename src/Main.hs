@@ -1,15 +1,15 @@
 module Main where
 
-import Data.Numbers.Primes (isPrime)
+import Data.Numbers.Primes (isPrime, primes)
 import Control.Monad (guard)
 
-f :: Integer -> Integer
-f x = 2 ^ x - 1
+mersenneNumber :: Integer -> Integer
+mersenneNumber n = 2 ^ n - 1
 
 mersennePrimes :: [Integer]
 mersennePrimes = do
-    x <- [1..]
-    let n = f x
+    x <- primes
+    let n = mersenneNumber x
     guard $ isPrime n
     return n
 
