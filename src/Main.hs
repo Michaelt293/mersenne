@@ -8,7 +8,8 @@ mersenneNumber n = 2 ^ n - 1
 
 mersennePrimes :: [Integer]
 mersennePrimes = do
-    x <- primes
+    let selectedPrimes = [ x | x <- primes, x <= 57885161 ]
+    x <- selectedPrimes
     let n = mersenneNumber x
     guard $ isPrime n
     return n
